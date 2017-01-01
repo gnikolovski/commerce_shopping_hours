@@ -1,0 +1,7 @@
+name: Commerce shopping hours
+type: module
+description: Define shopping hours of your shop.
+core: 8.x
+package: commerce
+dependencies:
+  - commerce

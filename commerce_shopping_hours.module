@@ -1,0 +1,46 @@
+<?php
+
+/**
+ * @file
+ * Contains commerce_shopping_hours.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function commerce_shopping_hours_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the commerce_shopping_hours module.
+    case 'help.page.commerce_shopping_hours':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Define shopping hours of your shop.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+function commerce_shopping_hours_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  $current_route = \Drupal::routeMatch()->getRouteName();
+  $commerce_shopping_hours_service = \Drupal::service('commerce_shopping_hours.commerce_shopping_hours_service');
+  $is_open = $commerce_shopping_hours_service->isShopOpen();
+  if ($current_route == 'commerce_checkout.form' && !$is_open) {
+    $form['#action'] = '/shop-closed';
+  }
+}
+
+function commerce_shopping_hours_theme($existing, $type, $theme, $path) {
+  return array(
+    'commerce_shopping_hours' => array(
+      'variables' => array(
+        'is_open' => TRUE,
+        'message' => '',
+        'shopping_hours' => '',
+        'show_shopping_hours' => TRUE,
+      ),
+    ),
+  );
+}
