@@ -34,200 +34,200 @@ class CommerceShoppingHoursForm extends ConfigFormBase {
   public function buildForm(array $form, FormStateInterface $form_state) {
     $config = $this->config('commerce_shopping_hours.settings');
 
-    $form['working_hours'] = array(
+    $form['working_hours'] = [
       '#type' => 'fieldset',
       '#title' => $this->t('Opening and closing hours'),
-    );
+    ];
 
     // Monday
-    $form['working_hours']['monday_from'] = array(
+    $form['working_hours']['monday_from'] = [
       '#title' => $this->t('Monday'),
       '#type' => 'textfield',
       '#size' => 10,
       '#maxlength' => 5,
       '#default_value' => $config->get('monday_from'),
-      '#attributes' => array(
-        'class' => array('shopping-hours'),
+      '#attributes' => [
+        'class' => ['shopping-hours'],
         'autocomplete' => 'off',
-      ),
+      ],
       '#prefix' => '<div class="container-inline">',
-    );
-    $form['working_hours']['monday_to'] = array(
+    ];
+    $form['working_hours']['monday_to'] = [
       '#type' => 'textfield',
       '#size' => 10,
       '#maxlength' => 5,
       '#default_value' => $config->get('monday_to'),
-      '#attributes' => array(
-        'class' => array('shopping-hours'),
+      '#attributes' => [
+        'class' => ['shopping-hours'],
         'autocomplete' => 'off',
-      ),
+      ],
       '#suffix' => '</div>',
-    );
+    ];
 
     // Tuesday
-    $form['working_hours']['tuesday_from'] = array(
+    $form['working_hours']['tuesday_from'] = [
       '#title' => $this->t('Tuesday'),
       '#type' => 'textfield',
       '#size' => 10,
       '#maxlength' => 5,
       '#default_value' => $config->get('tuesday_from'),
-      '#attributes' => array(
-        'class' => array('shopping-hours'),
+      '#attributes' => [
+        'class' => ['shopping-hours'],
         'autocomplete' => 'off',
-      ),
+      ],
       '#prefix' => '<div class="container-inline">',
-    );
-    $form['working_hours']['tuesday_to'] = array(
+    ];
+    $form['working_hours']['tuesday_to'] = [
       '#type' => 'textfield',
       '#size' => 10,
       '#maxlength' => 5,
       '#default_value' => $config->get('tuesday_to'),
-      '#attributes' => array(
-        'class' => array('shopping-hours'),
+      '#attributes' => [
+        'class' => ['shopping-hours'],
         'autocomplete' => 'off',
-      ),
+      ],
       '#suffix' => '</div>',
-    );
+    ];
 
     // Wednesday
-    $form['working_hours']['wednesday_from'] = array(
+    $form['working_hours']['wednesday_from'] = [
       '#title' => $this->t('Wednesday'),
       '#type' => 'textfield',
       '#size' => 10,
       '#maxlength' => 5,
       '#default_value' => $config->get('wednesday_from'),
-      '#attributes' => array(
-        'class' => array('shopping-hours'),
+      '#attributes' => [
+        'class' => ['shopping-hours'],
         'autocomplete' => 'off',
-      ),
+      ],
       '#prefix' => '<div class="container-inline">',
-    );
-    $form['working_hours']['wednesday_to'] = array(
+    ];
+    $form['working_hours']['wednesday_to'] = [
       '#type' => 'textfield',
       '#size' => 10,
       '#maxlength' => 5,
       '#default_value' => $config->get('wednesday_to'),
-      '#attributes' => array(
-        'class' => array('shopping-hours'),
+      '#attributes' => [
+        'class' => ['shopping-hours'],
         'autocomplete' => 'off',
-      ),
+      ],
       '#suffix' => '</div>',
-    );
+    ];
 
     // Thursday
-    $form['working_hours']['thursday_from'] = array(
+    $form['working_hours']['thursday_from'] = [
       '#title' => $this->t('Thursday'),
       '#type' => 'textfield',
       '#size' => 10,
       '#maxlength' => 5,
       '#default_value' => $config->get('thursday_from'),
-      '#attributes' => array(
-        'class' => array('shopping-hours'),
+      '#attributes' => [
+        'class' => ['shopping-hours'],
         'autocomplete' => 'off',
-      ),
+      ],
       '#prefix' => '<div class="container-inline">',
-    );
-    $form['working_hours']['thursday_to'] = array(
+    ];
+    $form['working_hours']['thursday_to'] = [
       '#type' => 'textfield',
       '#size' => 10,
       '#maxlength' => 5,
       '#default_value' => $config->get('thursday_to'),
-      '#attributes' => array(
-        'class' => array('shopping-hours'),
+      '#attributes' => [
+        'class' => ['shopping-hours'],
         'autocomplete' => 'off',
-      ),
+      ],
       '#suffix' => '</div>',
-    );
+    ];
 
     // Friday
-    $form['working_hours']['friday_from'] = array(
+    $form['working_hours']['friday_from'] = [
       '#title' => $this->t('Friday'),
       '#type' => 'textfield',
       '#size' => 10,
       '#maxlength' => 5,
       '#default_value' => $config->get('friday_from'),
-      '#attributes' => array(
-        'class' => array('shopping-hours'),
+      '#attributes' => [
+        'class' => ['shopping-hours'],
         'autocomplete' => 'off',
-      ),
+      ],
       '#prefix' => '<div class="container-inline">',
-    );
-    $form['working_hours']['friday_to'] = array(
+    ];
+    $form['working_hours']['friday_to'] = [
       '#type' => 'textfield',
       '#size' => 10,
       '#maxlength' => 5,
       '#default_value' => $config->get('friday_to'),
-      '#attributes' => array(
-        'class' => array('shopping-hours'),
+      '#attributes' => [
+        'class' => ['shopping-hours'],
         'autocomplete' => 'off',
-      ),
+      ],
       '#suffix' => '</div>',
-    );
+    ];
 
     // Saturday
-    $form['working_hours']['saturday_from'] = array(
+    $form['working_hours']['saturday_from'] = [
       '#title' => $this->t('Saturday'),
       '#type' => 'textfield',
       '#size' => 10,
       '#maxlength' => 5,
       '#default_value' => $config->get('saturday_from'),
-      '#attributes' => array(
-        'class' => array('shopping-hours'),
+      '#attributes' => [
+        'class' => ['shopping-hours'],
         'autocomplete' => 'off',
-      ),
+      ],
       '#prefix' => '<div class="container-inline">',
-    );
-    $form['working_hours']['saturday_to'] = array(
+    ];
+    $form['working_hours']['saturday_to'] = [
       '#type' => 'textfield',
       '#size' => 10,
       '#maxlength' => 5,
       '#default_value' => $config->get('saturday_to'),
-      '#attributes' => array(
-        'class' => array('shopping-hours'),
+      '#attributes' => [
+        'class' => ['shopping-hours'],
         'autocomplete' => 'off',
-      ),
+      ],
       '#suffix' => '</div>',
-    );
+    ];
 
     // Sunday
-    $form['working_hours']['sunday_from'] = array(
+    $form['working_hours']['sunday_from'] = [
       '#title' => $this->t('Sunday'),
       '#type' => 'textfield',
       '#size' => 10,
       '#maxlength' => 5,
       '#default_value' => $config->get('sunday_from'),
-      '#attributes' => array(
-        'class' => array('shopping-hours'),
+      '#attributes' => [
+        'class' => ['shopping-hours'],
         'autocomplete' => 'off',
-      ),
+      ],
       '#prefix' => '<div class="container-inline">',
-    );
-    $form['working_hours']['sunday_to'] = array(
+    ];
+    $form['working_hours']['sunday_to'] = [
       '#type' => 'textfield',
       '#size' => 10,
       '#maxlength' => 5,
       '#default_value' => $config->get('sunday_to'),
-      '#attributes' => array(
-        'class' => array('shopping-hours'),
+      '#attributes' => [
+        'class' => ['shopping-hours'],
         'autocomplete' => 'off',
-      ),
+      ],
       '#suffix' => '</div>',
-    );
+    ];
 
-    $form['working_hours']['show_shopping_hours'] = array(
+    $form['working_hours']['show_shopping_hours'] = [
       '#title' => $this->t('Show shopping hours'),
       '#type' => 'checkbox',
       '#description' => $this->t('Enable this option if you want to display shopping hours on the warning page.'),
       '#default_value' => $config->get('show_shopping_hours'),
-    );
+    ];
 
     // Message
-    $form['message'] = array(
+    $form['message'] = [
       '#title' => $this->t('Message'),
       '#type' => 'textarea',
       '#description' => $this->t('Enter the message to display to users when your shop is disabled.'),
       '#default_value' => $config->get('message'),
-    );
+    ];
 
     $form['#attached']['library'][] = 'commerce_shopping_hours/commerce_shopping_hours';
 
