@@ -42,9 +42,9 @@ class CommerceShoppingHoursBlock extends BlockBase implements ContainerFactoryPl
    *   The plugin_id for the plugin instance.
    * @param string $plugin_definition
    *   The plugin implementation definition.
-   * @param ConfigFactory $config_factory
+   * @param Drupal\Core\Config\ConfigFactory $config_factory
    *   The config factory.
-   * @param CommerceShoppingHoursService $commerce_shopping_hours_service
+   * @param Drupal\commerce_shopping_hours\CommerceShoppingHoursService $commerce_shopping_hours_service
    *   The commerce shopping hours service.
    */
   public function __construct(
