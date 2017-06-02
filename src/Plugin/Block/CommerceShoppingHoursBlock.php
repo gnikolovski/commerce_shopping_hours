@@ -6,7 +6,6 @@ use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\commerce_shopping_hours\CommerceShoppingHoursService;
-use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Config\ConfigFactory;
 
 /**
@@ -14,7 +13,7 @@ use Drupal\Core\Config\ConfigFactory;
  *
  * @Block(
  *  id = "commerce_shopping_hours_block",
- *  admin_label = @Translation("Commerce shopping hours"),
+ *  admin_label = @Translation("Commerce Shopping Hours"),
  *  category = @Translation("Commerce")
  * )
  */
@@ -25,14 +24,14 @@ class CommerceShoppingHoursBlock extends BlockBase implements ContainerFactoryPl
    *
    * @var \Drupal\Core\Config\ConfigFactory
    */
-  protected $config_factory;
+  protected $configFactory;
 
   /**
    * Drupal\commerce_shopping_hours\CommerceShoppingHoursService definition.
    *
    * @var Drupal\commerce_shopping_hours\CommerceShoppingHoursService
    */
-  protected $commerce_shopping_hours_service;
+  protected $commerceShoppingHoursService;
 
   /**
    * Construct.
@@ -52,8 +51,8 @@ class CommerceShoppingHoursBlock extends BlockBase implements ContainerFactoryPl
         CommerceShoppingHoursService $commerce_shopping_hours_service
   ) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
-    $this->config_factory = $config_factory;
-    $this->commerce_shopping_hours_service = $commerce_shopping_hours_service;
+    $this->configFactory = $config_factory;
+    $this->commerceShoppingHoursService = $commerce_shopping_hours_service;
   }
   /**
    * {@inheritdoc}
@@ -71,23 +70,23 @@ class CommerceShoppingHoursBlock extends BlockBase implements ContainerFactoryPl
    * {@inheritdoc}
    */
   public function build() {
-    $is_shop_open = $this->commerce_shopping_hours_service->isShopOpen();
-    $shopping_hours = $this->commerce_shopping_hours_service->getShoppingHours();
-    $config = $this->config_factory->get('commerce_shopping_hours.settings');
+    $config = $this->configFactory->get('commerce_shopping_hours.settings');
+    $is_shop_open = $this->commerceShoppingHoursService->isShopOpen();
     $message = $config->get('message');
     $show_shopping_hours = $config->get('show_shopping_hours');
+    $shopping_hours = $this->commerceShoppingHoursService->getShoppingHours();
 
-    $build[] = array(
+    return [
       '#theme' => 'commerce_shopping_hours',
         '#is_open' => $is_shop_open,
         '#message' => t($message),
-        '#shopping_hours' => $shopping_hours,
         '#show_shopping_hours' => $show_shopping_hours,
-        '#cache' => array('max-age' => 0),
-        '#attached' => array('library' => array('commerce_shopping_hours/commerce_shopping_hours')),
-    );
-
-    return $build;
+        '#shopping_hours' => $shopping_hours,
+        '#cache' => ['max-age' => 0],
+        '#attached' => ['library' =>
+          ['commerce_shopping_hours/commerce_shopping_hours'],
+        ],
+    ];
   }
 
 }

@@ -19,21 +19,21 @@ class CommerceShoppingHoursWarning extends ControllerBase {
    *
    * @var \Drupal\Core\Config\ConfigFactory
    */
-  protected $config_factory;
+  protected $configFactory;
 
   /**
    * Drupal\commerce_shopping_hours\CommerceShoppingHoursService definition.
    *
    * @var Drupal\commerce_shopping_hours\CommerceShoppingHoursService
    */
-  protected $commerce_shopping_hours_service;
+  protected $commerceShoppingHoursService;
 
   /**
    * {@inheritdoc}
    */
   public function __construct(ConfigFactory $config_factory, CommerceShoppingHoursService $commerce_shopping_hours_service) {
-    $this->config_factory = $config_factory;
-    $this->commerce_shopping_hours_service = $commerce_shopping_hours_service;
+    $this->configFactory = $config_factory;
+    $this->commerceShoppingHoursService = $commerce_shopping_hours_service;
   }
 
   /**
@@ -50,23 +50,26 @@ class CommerceShoppingHoursWarning extends ControllerBase {
    * Display 'Shop closed' page.
    */
   public function index() {
-    $config = $this->config_factory->get('commerce_shopping_hours.settings');
+    $config = $this->configFactory->get('commerce_shopping_hours.settings');
     $message = $config->get('message');
     $show_shopping_hours = $config->get('show_shopping_hours');
-    $shopping_hours = $this->commerce_shopping_hours_service->getShoppingHours();
+    $shopping_hours = $this->commerceShoppingHoursService->getShoppingHours();
 
-    $_message = [
+    $message = [
       '#type' => 'markup',
       '#markup' => '<p>' . $this->t($message) . '</p>',
+      '#cache' => ['max-age' => 0],
     ];
-    $_shopping_hours = [
+
+    $shopping_hours = [
       '#type' => 'markup',
       '#markup' => '<p>' . $this->t('Shopping hours: ') . $shopping_hours['from'] . ' - ' . $shopping_hours['to'] . '</p>',
     ];
+
     $output = [];
-    $output[] = $_message;
+    $output[] = $message;
     if ($show_shopping_hours) {
-      $output[] = $_shopping_hours;
+      $output[] = $shopping_hours;
     }
 
     return $output;

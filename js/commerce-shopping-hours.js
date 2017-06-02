@@ -1,7 +1,7 @@
 (function($) {
-  
+
   $('.shopping-hours').timepicker({
-    timeFormat: 'HH:mm',
+    timeFormat: 'H:i',
     interval: 15,
     startTime: '00:00',
     dynamic: false,

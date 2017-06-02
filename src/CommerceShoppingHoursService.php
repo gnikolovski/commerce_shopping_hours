@@ -12,7 +12,7 @@ use Drupal\Core\Config\ConfigFactoryInterface;
 class CommerceShoppingHoursService implements CommerceShoppingHoursServiceInterface {
 
   /**
-   * The devel config.
+   * The config.
    *
    * @var \Drupal\Core\Config\ImmutableConfig
    */
@@ -25,6 +25,9 @@ class CommerceShoppingHoursService implements CommerceShoppingHoursServiceInterf
     $this->config = $config_factory->get('commerce_shopping_hours.settings');
   }
 
+  /**
+   * Check to see if shop is open.
+   */
   public function isShopOpen() {
     $config = $this->config->get();
     $today = strtolower(date('l'));
@@ -41,15 +44,18 @@ class CommerceShoppingHoursService implements CommerceShoppingHoursServiceInterf
     return FALSE;
   }
 
+  /**
+   * Get shopping hours.
+   */
   public function getShoppingHours() {
     $config = $this->config->get();
     $today = strtolower(date('l'));
     $today_settings_from = $config[$today . '_from'];
     $today_settings_to = $config[$today . '_to'];
-    return array(
+    return [
       'from' => $today_settings_from,
       'to' => $today_settings_to,
-    );
+    ];
   }
 
 }
