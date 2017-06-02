@@ -4,4 +4,4 @@ description: Define shopping hours of your Drupal 8 Commerce shop.
 core: 8.x
 package: commerce
 dependencies:
-  - commerce
+  - drupal:commerce

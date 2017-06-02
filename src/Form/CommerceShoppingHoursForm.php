@@ -255,7 +255,7 @@ class CommerceShoppingHoursForm extends ConfigFormBase {
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
     $values = $form_state->getValues();
-    $config = $this->config('commerce_shopping_hours.settings')
+    $this->config('commerce_shopping_hours.settings')
       ->set('monday_from', $values['monday_from'])
       ->set('monday_to', $values['monday_to'])
       ->set('tuesday_from', $values['tuesday_from'])

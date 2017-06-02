@@ -1,4 +1,5 @@
-(function($) {
+(function ($) {
+  'use strict';
 
   $('.shopping-hours').timepicker({
     timeFormat: 'H:i',
