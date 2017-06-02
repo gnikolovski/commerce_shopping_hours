@@ -63,7 +63,7 @@ class CommerceShoppingHoursWarning extends ControllerBase {
 
     $shopping_hours = [
       '#type' => 'markup',
-      '#markup' => '<p>' . $this->t('Shopping hours: ') . $shopping_hours['from'] . ' - ' . $shopping_hours['to'] . '</p>',
+      '#markup' => '<p>' . $this->t('Shopping hours:') . ' ' . $shopping_hours['from'] . ' - ' . $shopping_hours['to'] . '</p>',
     ];
 
     $output = [];

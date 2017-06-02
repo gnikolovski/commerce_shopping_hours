@@ -39,7 +39,7 @@ class CommerceShoppingHoursForm extends ConfigFormBase {
       '#title' => $this->t('Opening and closing hours'),
     ];
 
-    // Monday
+    // Monday.
     $form['working_hours']['monday_from'] = [
       '#title' => $this->t('Monday'),
       '#type' => 'textfield',
@@ -64,7 +64,7 @@ class CommerceShoppingHoursForm extends ConfigFormBase {
       '#suffix' => '</div>',
     ];
 
-    // Tuesday
+    // Tuesday.
     $form['working_hours']['tuesday_from'] = [
       '#title' => $this->t('Tuesday'),
       '#type' => 'textfield',
@@ -89,7 +89,7 @@ class CommerceShoppingHoursForm extends ConfigFormBase {
       '#suffix' => '</div>',
     ];
 
-    // Wednesday
+    // Wednesday.
     $form['working_hours']['wednesday_from'] = [
       '#title' => $this->t('Wednesday'),
       '#type' => 'textfield',
@@ -114,7 +114,7 @@ class CommerceShoppingHoursForm extends ConfigFormBase {
       '#suffix' => '</div>',
     ];
 
-    // Thursday
+    // Thursday.
     $form['working_hours']['thursday_from'] = [
       '#title' => $this->t('Thursday'),
       '#type' => 'textfield',
@@ -139,7 +139,7 @@ class CommerceShoppingHoursForm extends ConfigFormBase {
       '#suffix' => '</div>',
     ];
 
-    // Friday
+    // Friday.
     $form['working_hours']['friday_from'] = [
       '#title' => $this->t('Friday'),
       '#type' => 'textfield',
@@ -164,7 +164,7 @@ class CommerceShoppingHoursForm extends ConfigFormBase {
       '#suffix' => '</div>',
     ];
 
-    // Saturday
+    // Saturday.
     $form['working_hours']['saturday_from'] = [
       '#title' => $this->t('Saturday'),
       '#type' => 'textfield',
@@ -189,7 +189,7 @@ class CommerceShoppingHoursForm extends ConfigFormBase {
       '#suffix' => '</div>',
     ];
 
-    // Sunday
+    // Sunday.
     $form['working_hours']['sunday_from'] = [
       '#title' => $this->t('Sunday'),
       '#type' => 'textfield',
@@ -221,7 +221,7 @@ class CommerceShoppingHoursForm extends ConfigFormBase {
       '#default_value' => $config->get('show_shopping_hours'),
     ];
 
-    // Message
+    // Message.
     $form['message'] = [
       '#title' => $this->t('Message'),
       '#type' => 'textarea',

@@ -44,16 +44,17 @@ class CommerceShoppingHoursBlock extends BlockBase implements ContainerFactoryPl
    *   The plugin implementation definition.
    */
   public function __construct(
-        array $configuration,
-        $plugin_id,
-        $plugin_definition,
-        ConfigFactory $config_factory,
-        CommerceShoppingHoursService $commerce_shopping_hours_service
+    array $configuration,
+    $plugin_id,
+    $plugin_definition,
+    ConfigFactory $config_factory,
+    CommerceShoppingHoursService $commerce_shopping_hours_service
   ) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
     $this->configFactory = $config_factory;
     $this->commerceShoppingHoursService = $commerce_shopping_hours_service;
   }
+
   /**
    * {@inheritdoc}
    */
@@ -66,6 +67,7 @@ class CommerceShoppingHoursBlock extends BlockBase implements ContainerFactoryPl
       $container->get('commerce_shopping_hours.commerce_shopping_hours_service')
     );
   }
+
   /**
    * {@inheritdoc}
    */
@@ -78,14 +80,15 @@ class CommerceShoppingHoursBlock extends BlockBase implements ContainerFactoryPl
 
     return [
       '#theme' => 'commerce_shopping_hours',
-        '#is_open' => $is_shop_open,
-        '#message' => $this->t($message),
-        '#show_shopping_hours' => $show_shopping_hours,
-        '#shopping_hours' => $shopping_hours,
-        '#cache' => ['max-age' => 0],
-        '#attached' => ['library' =>
+      '#is_open' => $is_shop_open,
+      '#message' => $this->t($message),
+      '#show_shopping_hours' => $show_shopping_hours,
+      '#shopping_hours' => $shopping_hours,
+      '#cache' => ['max-age' => 0],
+      '#attached' => [
+        'library' =>
           ['commerce_shopping_hours/commerce_shopping_hours'],
-        ],
+      ],
     ];
   }
 
