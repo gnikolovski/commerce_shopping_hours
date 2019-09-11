@@ -43,7 +43,7 @@ shopping hours. To do this go to the Block layout and add a block with the name
 Goran Nikolovski  
 Website: (http://www.gorannikolovski.com)  
 Drupal: (https://www.drupal.org/u/gnikolovski)  
-Email: nikolovski84@gmail.com  
+Email: goran@gorannikolovski.com  
 
 Company: Studio Present, Subotica, Serbia  
 Website: (http://www.studiopresent.com)  
