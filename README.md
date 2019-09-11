@@ -41,11 +41,11 @@ shopping hours. To do this go to the Block layout and add a block with the name
 ### AUTHOR
 
 Goran Nikolovski  
-Website: (http://www.gorannikolovski.com)  
-Drupal: (https://www.drupal.org/u/gnikolovski)  
+Website: https://gorannikolovski.com  
+Drupal: https://www.drupal.org/u/gnikolovski  
 Email: goran@gorannikolovski.com  
 
 Company: Studio Present, Subotica, Serbia  
-Website: (http://www.studiopresent.com)  
-Drupal: (https://www.drupal.org/studio-present)  
+Website: http://www.studiopresent.com  
+Drupal: https://www.drupal.org/studio-present  
 Email: info@studiopresent.com  
