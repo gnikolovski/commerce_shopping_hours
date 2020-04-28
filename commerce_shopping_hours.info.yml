@@ -1,7 +1,8 @@
-name: Commerce Shopping Hours
 type: module
-description: Define shopping hours of your Drupal 8 Commerce shop.
+name: 'Commerce Shopping Hours'
+description: 'Define shopping hours of your Drupal 8 Commerce shop.'
+package: 'Commerce (contrib)'
 core: 8.x
-package: Commerce (contrib)
+core_version_requirement: ^8 || ^9
 dependencies:
   - commerce:commerce
