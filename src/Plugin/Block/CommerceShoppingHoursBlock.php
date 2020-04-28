@@ -85,7 +85,7 @@ class CommerceShoppingHoursBlock extends BlockBase implements ContainerFactoryPl
     return [
       '#theme' => 'commerce_shopping_hours',
       '#is_open' => $is_shop_open,
-      '#message' => $this->t($message),
+      '#message' => $message,
       '#show_shopping_hours' => $show_shopping_hours,
       '#shopping_hours' => $shopping_hours,
       '#cache' => ['max-age' => 0],

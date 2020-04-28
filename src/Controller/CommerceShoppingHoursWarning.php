@@ -57,7 +57,7 @@ class CommerceShoppingHoursWarning extends ControllerBase {
 
     $message = [
       '#type' => 'markup',
-      '#markup' => '<p>' . $this->t($message) . '</p>',
+      '#markup' => '<p>' . $message . '</p>',
       '#cache' => ['max-age' => 0],
     ];
 
