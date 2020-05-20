@@ -38,6 +38,9 @@ class CommerceShoppingHoursService implements CommerceShoppingHoursServiceInterf
     $today_settings_to = $config[$today . '_to'];
     $today_settings_to_ts = strtotime($today_settings_to);
 
+    if (empty($today_settings_from) || empty($today_settings_to)) {
+      return FALSE;
+    }
     if ($now_ts >= $today_settings_from_ts && $now_ts <= $today_settings_to_ts) {
       return TRUE;
     }

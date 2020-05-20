@@ -211,7 +211,7 @@ class CommerceShoppingHoursForm extends ConfigFormBase {
         'class' => ['shopping-hours'],
         'autocomplete' => 'off',
       ],
-      '#suffix' => '</div>',
+      '#suffix' => '</div><span class="description">' . $this->t('Leave empty if store is closed on a certain day of the week.') . '</span>',
     ];
 
     $form['working_hours']['show_shopping_hours'] = [
@@ -241,6 +241,9 @@ class CommerceShoppingHoursForm extends ConfigFormBase {
     $values = $form_state->getValues();
     foreach ($values as $key => $value) {
       if (strpos($key, 'y_from') || strpos($key, 'y_to')) {
+        if (empty($value)) {
+          continue;
+        }
         $date_obj = \DateTime::createFromFormat('d.m.Y H:i', '10.10.2010 ' . $value);
         if (!$date_obj) {
           $form_state->setErrorByName($key, $this->t('You must enter a valid time.'));

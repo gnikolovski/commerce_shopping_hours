@@ -68,7 +68,7 @@ class CommerceShoppingHoursWarning extends ControllerBase {
 
     $output = [];
     $output[] = $message;
-    if ($show_shopping_hours) {
+    if ($show_shopping_hours && !empty($shopping_hours['from']) && !empty($shopping_hours['to'])) {
       $output[] = $shopping_hours;
     }
 
