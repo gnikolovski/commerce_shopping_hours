@@ -26,6 +26,14 @@ class CommerceShoppingHoursService implements CommerceShoppingHoursServiceInterf
   }
 
   /**
+   * Check to see if functionality is enabled.
+   */
+  public function isEnabled() {
+    $config = $this->config->get();
+    return $config['enable'];
+  }
+
+  /**
    * Check to see if shop is open.
    */
   public function isShopOpen() {

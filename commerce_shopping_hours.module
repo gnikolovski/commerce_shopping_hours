@@ -31,7 +31,8 @@ function commerce_shopping_hours_form_alter(&$form, FormStateInterface $form_sta
   $current_route = \Drupal::routeMatch()->getRouteName();
   $commerce_shopping_hours_service = \Drupal::service('commerce_shopping_hours.commerce_shopping_hours_service');
   $is_open = $commerce_shopping_hours_service->isShopOpen();
-  if ($current_route == 'commerce_checkout.form' && !$is_open) {
+  $enabled = $commerce_shopping_hours_service->isEnabled();
+  if ($current_route == 'commerce_checkout.form' && !$is_open && $enabled) {
     $form['#action'] = '/shop-closed';
   }
 }

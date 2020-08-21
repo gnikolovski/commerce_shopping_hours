@@ -57,6 +57,7 @@ class CommerceShoppingHoursFormTest extends BrowserTestBase {
     $this->assertSession()->fieldExists('edit-sunday-to');
     $this->assertSession()->fieldExists('edit-message');
     $this->assertSession()->checkboxChecked('edit-show-shopping-hours');
+    $this->assertSession()->checkboxChecked('edit-enable');
     $this->assertSession()->buttonExists('Save configuration');
   }
 

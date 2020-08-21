@@ -50,3 +50,6 @@ commerce_shopping_hours.settings:
     message:
       type: text
       label: 'Message'
+    enable:
+      type: boolean
+      label: 'Enable'

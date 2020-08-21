@@ -13,4 +13,5 @@ saturday_to: '15:00'
 sunday_from: '09:00'
 sunday_to: '15:00'
 message: 'Shop is currently closed.'
+enable: true
 show_shopping_hours: true

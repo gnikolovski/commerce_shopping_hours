@@ -229,6 +229,13 @@ class CommerceShoppingHoursForm extends ConfigFormBase {
       '#default_value' => $config->get('message'),
     ];
 
+    $form['enable'] = [
+      '#title' => $this->t('Enable'),
+      '#type' => 'checkbox',
+      '#description' => $this->t('Check this box to restrict customer checkout to only during shopping hours.'),
+      '#default_value' => $config->get('enable'),
+    ];
+
     $form['#attached']['library'][] = 'commerce_shopping_hours/commerce_shopping_hours';
 
     return parent::buildForm($form, $form_state);
