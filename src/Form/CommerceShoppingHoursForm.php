@@ -282,6 +282,7 @@ class CommerceShoppingHoursForm extends ConfigFormBase {
       ->set('sunday_to', $values['sunday_to'])
       ->set('show_shopping_hours', $values['show_shopping_hours'])
       ->set('message', $values['message'])
+      ->set('enable', $values['enable'])
       ->save();
     parent::submitForm($form, $form_state);
   }
